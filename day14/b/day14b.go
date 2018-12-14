@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"strings"
+	"time"
 )
 
 type Score struct {
@@ -117,7 +118,8 @@ func main() {
 	}
 
 	for _, i := range d {
+		st := time.Now()
 		result := Compute(i)
-		log.Printf("result for %d: %d", i, result)
+		log.Printf("result for %d: %d (time taken: %s)", i, result, time.Since(st))
 	}
 }
